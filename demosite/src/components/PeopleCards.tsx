@@ -1,5 +1,5 @@
 import React from "react";
-import peopleData from "@/data/Test.json";
+import peopleData from "@/data/test2.json";
 
 interface PersonCardPropsP {
   name: string;
