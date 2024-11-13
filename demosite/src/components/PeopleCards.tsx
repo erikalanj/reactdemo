@@ -1,4 +1,5 @@
 import React from "react";
+import peopleData from "@/data/Test.json";
 
 interface PersonCardPropsP {
   name: string;
@@ -7,7 +8,7 @@ interface PersonCardPropsP {
 
 const PersonCard: React.FC<PersonCardPropsP> = ({ name, age }) => {
   return (
-    <div className="bg-blue-500 p-4 rounded shadow-md">
+    <div className="bg-blue-500 p-4 rounded shadow-md m-2">
       <div className="text-sm font-bold">{name} </div>
       <div className="text-sm">Age: {age}</div>
     </div>
@@ -17,9 +18,9 @@ const PersonCard: React.FC<PersonCardPropsP> = ({ name, age }) => {
 const PeopleCards = () => {
   return (
     <div className="p-4">
-      <PersonCard name="Alice" age={30} />
-      <PersonCard name="Alice" age={30} />
-      <PersonCard name="Alice" age={30} />
+      {peopleData.people.map((person, index) => (
+        <PersonCard key={index} name={person.name} age={person.age} />
+      ))}
     </div>
   );
 };
